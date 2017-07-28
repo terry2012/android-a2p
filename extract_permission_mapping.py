@@ -17,7 +17,7 @@ def hasPermission(javasrc):
     return False
 
 def getMethodName(line):
-    pattern = re.compile(r'\s+([A-Za-z0-9]+)\(')
+    pattern = re.compile(r'\s+([a-z][A-Za-z0-9_]*)\(')
     m = pattern.search(line, re.MULTILINE)
     if m:
         return m.group(1)

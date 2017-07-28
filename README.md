@@ -72,5 +72,5 @@ Generate: `ACCESS_CHECKIN_PROPERTIES -> android.permission.ACCESS_CHECKIN_PROPER
 $ python extract_permission_mapping.py <base_dir>
 ```
 
-## P2A Mappings
-[Android N](output_n.txt)
+## A2P Mappings
+[Android N](mapping_n.txt)

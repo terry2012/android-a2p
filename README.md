@@ -1,6 +1,12 @@
 # android-a2p
 Simple huristic based Android api to permission mapping extractor. (incomplete but accurate)
 
+Research results like [PScout](http://pscout.csl.toronto.edu/) are more complete but imprecise and problematic. For security checkers like Android capability leak, those result are not able to be used in the practical.
+
+This inspires me to do the simple huristic python script, and results are surprisingly good.
+
+If you find any new case not covered by the script please let me know, or feel free to push-request your code.
+
 ## Observation
 AOSP have following ways to describe the permission needed for an API:
 

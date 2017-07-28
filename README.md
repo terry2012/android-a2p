@@ -5,7 +5,7 @@ Research results like [PScout](http://pscout.csl.toronto.edu/) are more complete
 
 This inspires me to do the simple huristic python script, and results are surprisingly good.
 
-If you find any new case not covered by the script please let me know, or feel free to push-request your code.
+If you find any new case not covered by the script please let me know, or feel free to pull-request your code.
 
 ## Observation
 AOSP have following ways to describe the permission needed for an API:

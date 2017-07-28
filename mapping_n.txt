@@ -104,7 +104,6 @@ android.content.pm.PackageManager deletePackageAsUser android.permission.INTERAC
 android.bluetooth.BluetoothGatt readDescriptor android.permission.BLUETOOTH
 android.content.pm.PackageManager deleteApplicationCacheFilesAsUser android.permission.DELETE_CACHE_FILES|android.permission.INTERACT_ACROSS_USERS
 android.os.UserManager isManagedProfile android.permission.MANAGE_USERS
-android.bluetooth.BluetoothGattCharacteristic BluetoothGattCharacteristic android.permission.BLUETOOTH
 android.bluetooth.BluetoothDevice createBondOutOfBand android.permission.BLUETOOTH_ADMIN
 android.hardware.location.GeofenceHardware addGeofence android.permission.ACCESS_FINE_LOCATION|android.permission.LOCATION_HARDWARE
 android.location.LocationManager addNmeaListener android.permission.ACCESS_FINE_LOCATION
@@ -120,7 +119,7 @@ android.nfc.tech.MifareClassic transceive android.permission.NFC
 android.nfc.tech.MifareUltralight transceive android.permission.NFC
 android.media.session.MediaSessionManager getActiveSessionsForUser android.permission.INTERACT_ACROSS_USERS_FULL
 android.bluetooth.BluetoothGatt requestMtu android.permission.BLUETOOTH
-android.location.LocationManager registerGnssStatusCallback android.permission.ACCESS_FINE_LOCATION
+android.bluetooth.BluetoothDevice fetchUuidsWithSdp android.permission.BLUETOOTH
 android.bluetooth.BluetoothInputDevice disconnect android.permission.BLUETOOTH_ADMIN
 android.telephony.TelephonyManager iccExchangeSimIO android.permission.MODIFY_PHONE_STATE
 android.bluetooth.BluetoothHealth getDevicesMatchingConnectionStates android.permission.BLUETOOTH
@@ -148,7 +147,6 @@ android.nfc.tech.TagTechnology close android.permission.NFC
 android.bluetooth.BluetoothManager getConnectionState android.permission.BLUETOOTH
 android.os.RecoverySystem installPackage android.permission.REBOOT
 android.content.ContentResolver removePeriodicSync android.permission.WRITE_SYNC_SETTINGS
-android.os.FileUriExposedException FileUriExposedException android.permission.READ_EXTERNAL_STORAGE
 android.location.LocationManager addProximityAlert android.permission.ACCESS_FINE_LOCATION|android.permission.ACCESS_COARSE_LOCATION
 android.bluetooth.BluetoothAdapter getLeState android.permission.BLUETOOTH
 android.bluetooth.BluetoothA2dp setPriority android.permission.BLUETOOTH_ADMIN
@@ -173,6 +171,7 @@ android.provider.Settings canDrawOverlays android.permission.SYSTEM_ALERT_WINDOW
 android.telephony.TelephonyManager getAllCellInfo android.permission.ACCESS_COARSE_LOCATION
 android.content.pm.PackageManager deleteApplicationCacheFiles android.permission.DELETE_CACHE_FILES
 android.os.UserManager getSerialNumbersOfUsers android.permission.MANAGE_USERS
+android.bluetooth.BluetoothGattDescriptor initDescriptor android.permission.BLUETOOTH
 android.content.Context getExternalCacheDir android.permission.READ_EXTERNAL_STORAGE|android.permission.WRITE_EXTERNAL_STORAGE
 android.os.UserManager setUserEnabled android.permission.MANAGE_USERS
 android.bluetooth.BluetoothHealth getMainChannelFd android.permission.BLUETOOTH
@@ -180,6 +179,7 @@ android.hardware.location.GeofenceHardware registerForMonitorStateChangeCallback
 android.bluetooth.BluetoothHealth registerAppConfiguration android.permission.BLUETOOTH
 android.location.LocationManager registerGnssNavigationMessageCallback android.permission.ACCESS_FINE_LOCATION
 android.nfc.NfcAdapter disableForegroundDispatch android.permission.NFC
+android.os.FileUriExposedException super android.permission.READ_EXTERNAL_STORAGE
 android.os.UserManager getUsers android.permission.MANAGE_USERS
 android.nfc.NfcAdapter setBeamPushUrisCallback android.permission.NFC
 android.telecom.TelecomManager getDefaultOutgoingPhoneAccount android.permission.READ_PHONE_STATE
@@ -293,7 +293,6 @@ android.net.ConnectivityManager getTetheredIfaces android.permission.ACCESS_NETW
 android.hardware.fingerprint.FingerprintManager preEnroll android.permission.MANAGE_FINGERPRINT
 android.telephony.TelephonyManager getLine1Number android.permission.READ_PHONE_STATE|android.permission.READ_SMS
 android.net.ConnectivityManager requestRouteToHost android.permission.CHANGE_NETWORK_STATE
-android.media.session.MediaSession MediaSession android.permission.INTERACT_ACROSS_USERS_FULL
 android.os.PowerManager nap android.permission.DEVICE_POWER
 android.bluetooth.BluetoothA2dp getPriority android.permission.BLUETOOTH
 android.bluetooth.le.BluetoothLeAdvertiser stopAdvertising android.permission.BLUETOOTH_ADMIN
@@ -311,7 +310,6 @@ android.nfc.NfcAdapter setNdefPushMessageCallback android.permission.NFC
 android.bluetooth.BluetoothDevice createL2capSocket android.permission.BLUETOOTH
 android.bluetooth.BluetoothGatt setCharacteristicNotification android.permission.BLUETOOTH
 android.nfc.cardemulation.CardEmulation isDefaultServiceForAid android.permission.NFC
-android.bluetooth.BluetoothGattDescriptor BluetoothGattDescriptor android.permission.BLUETOOTH
 android.app.trust.TrustManager registerTrustListener android.permission.TRUST_LISTENER
 android.bluetooth.BluetoothA2dpSink getPriority android.permission.BLUETOOTH
 android.bluetooth.le.BluetoothLeScanner startScan android.permission.ACCESS_FINE_LOCATION|android.permission.BLUETOOTH_ADMIN|android.permission.ACCESS_COARSE_LOCATION
@@ -361,7 +359,6 @@ android.bluetooth.BluetoothAdapter isDiscovering android.permission.BLUETOOTH
 android.hardware.display.DisplayManager stopWifiDisplayScan android.permission.CONFIGURE_WIFI_DISPLAY
 android.bluetooth.BluetoothGatt getServices android.permission.BLUETOOTH
 android.bluetooth.BluetoothAdapter setScanMode android.permission.WRITE_SECURE_SETTINGS
-android.bluetooth.BluetoothGattService BluetoothGattService android.permission.BLUETOOTH
 android.content.Context clearWallpaper android.permission.SET_WALLPAPER
 android.bluetooth.BluetoothAdapter factoryReset android.permission.BLUETOOTH_PRIVILEGED
 android.telephony.TelephonyManager getSimSerialNumber android.permission.READ_PHONE_STATE
@@ -409,7 +406,7 @@ android.nfc.NfcAdapter enableForegroundNdefPush android.permission.NFC
 android.bluetooth.BluetoothGatt writeDescriptor android.permission.BLUETOOTH
 android.net.ConnectivityManager getNetworkPreference android.permission.ACCESS_NETWORK_STATE
 android.net.ConnectivityManager getActiveNetworkInfoForUid android.permission.CONNECTIVITY_INTERNAL
-android.bluetooth.BluetoothDevice fetchUuidsWithSdp android.permission.BLUETOOTH
+android.bluetooth.BluetoothGattCharacteristic initCharacteristic android.permission.BLUETOOTH
 android.nfc.tech.Ndef makeReadOnly android.permission.NFC
 android.net.ConnectivityManager getActiveNetwork android.permission.ACCESS_NETWORK_STATE
 android.accounts.AccountManager getAccountsByTypeAndFeatures android.permission.GET_ACCOUNTS
@@ -434,6 +431,7 @@ android.nfc.tech.IsoDep transceive android.permission.NFC
 android.location.LocationRequest setWorkSource android.permission.UPDATE_DEVICE_STATS
 android.app.KeyguardManager reenableKeyguard android.permission.DISABLE_KEYGUARD
 android.bluetooth.BluetoothDevice setSimAccessPermission android.permission.BLUETOOTH_PRIVILEGED
+android.location.LocationManager registerGnssStatusCallback android.permission.ACCESS_FINE_LOCATION
 android.telephony.TelephonyManager getLteOnCdmaMode android.permission.READ_PHONE_STATE
 android.bluetooth.BluetoothAdapter enable android.permission.BLUETOOTH_ADMIN
 android.telephony.TelephonyManager getSubscriberId android.permission.READ_PHONE_STATE

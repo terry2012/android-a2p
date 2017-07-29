@@ -61,7 +61,7 @@ def parseJavaSource(cname, javasrc, mapping, name_to_permission):
     fqn = cname
     if pkg_m:
         fqn = pkg_m.group(1) + '.' + cname
-    anno_pattern = re.compile(r'@RequiresPermission\(([^\)]*)\)(([^/;])+?(?=;))')
+    anno_pattern = re.compile(r'@RequiresPermission\(([^\)]*)\)(([^;])+?(?=;))')
     for m in re.findall(anno_pattern, javasrc):
         permission = m[0]
         method = getMethodName(m[1])

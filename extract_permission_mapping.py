@@ -71,14 +71,15 @@ def parseJavaSource(cname, javasrc, mapping, name_to_permission):
             mapping.add(item)
     doc_pattern = re.compile(r'(/\*\*(?:[^*]|\*(?!/))*\*/)(([^/;])+?(?=;))')
     for m in re.findall(doc_pattern, javasrc):
-        permission = getPermissionFromDoc(m[0])
-        if permission:
-            method = getMethodName(m[1])
-            if method:
-                full_permissions = handlePermission(permission, name_to_permission)
-                if full_permissions:
-                    item = fqn + ' ' + method + ' ' + full_permissions
-                    mapping.add(item)
+        if '@RequiresPermission(' not in m[1]:
+            permission = getPermissionFromDoc(m[0])
+            if permission:
+                method = getMethodName(m[1])
+                if method:
+                    full_permissions = handlePermission(permission, name_to_permission)
+                    if full_permissions:
+                        item = fqn + ' ' + method + ' ' + full_permissions
+                        mapping.add(item)
 
 rootdir = sys.argv[1]
 name_to_permission = {}
@@ -103,6 +104,6 @@ for root, dirs, files in os.walk(rootdir):
                     parseJavaSource(cname, code, mapping, name_to_permission)
 
 outfile = open('mapping.txt', 'w+')
-for item in mapping:
+for item in sorted(mapping):
     outfile.write('%s\n' % item)
 
